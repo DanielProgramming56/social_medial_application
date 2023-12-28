@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken"
 
 export const authUser = async (req, res, next) => {
     try {
-        let token = req.headers("Authorization");
+        let token = req.header("Authorization");
 
         if (!token) return res.status(403).send("Access Denied");
 
@@ -14,6 +14,6 @@ export const authUser = async (req, res, next) => {
         req.user = verified;
         next();
     } catch (error) {
-        res.status(500).json({ error: err.message });
+        res.status(500).json({ error: error.message });
     }
 }

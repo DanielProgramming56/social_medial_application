@@ -9,6 +9,6 @@ route.get("/:id", authUser, getUser)
 route.get("/:id/friends", authUser, getUserFriends)
 
 // UPDATE
-route.patch("/;id/:friendId", authUser, addRemoveFriend);
+route.patch("/:id/:friendId", authUser, addRemoveFriend);
 
 export default route

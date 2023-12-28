@@ -50,20 +50,20 @@ export const register = async (req, res) => {
 export const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
-        const UserExist = await User.findOne({ email })
+        const user = await User.findOne({ email })
 
-        if (!UserExist) {
+        if (!user) {
             res.status(400).json({ msg: "User does not exist. " });
             return;
         }
 
-        const isMatch = await bcrypt.compare(password, UserExist.password)
+        const isMatch = await bcrypt.compare(password, user.password)
 
         if (!isMatch) return res.status(400).send('invalid credentials')
 
-        const token = jwt.sign({ id: UserExist._id }, process.env.JWT_KEY, { expiresIn: "1hr" })
-        delete UserExist.password;
-        res.status(200).json({ token, UserExist });
+        const token = jwt.sign({ id: user._id }, process.env.JWT_KEY, { expiresIn: "1hr" })
+        delete user.password;
+        res.status(200).json({ token, user });
     } catch (error) {
         res.status(500).json({ error: error.message })
     }
