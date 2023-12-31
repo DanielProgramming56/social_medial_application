@@ -2,7 +2,6 @@ import { Box, useMediaQuery } from "@mui/material";
 import FriendListWidget from "page/widget/FriendListWidget";
 import UserWidget from "page/widget/Userwidget";
 import MyPostWidget from "page/widget/myPostWidget";
-import PostWidgets from "page/widget/postsWidget";
 import PostsWidgets from "page/widget/postsWidget";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -17,7 +16,7 @@ const Profile = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
 
   const getUser = async () => {
-    const response = await fetch(`http://localhost:3005/api/user/${userId}`, {
+    const response = await fetch(`${process.env.REACT_APP_PORT}/api/user/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
