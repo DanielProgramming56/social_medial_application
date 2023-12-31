@@ -12,7 +12,7 @@ const FriendListWidget = ({ userId }) => {
   const friends = useSelector((state) => state.user.friends);
   const getFriends = async () => {
     const response = await fetch(
-      `http://localhost:3005/api/user/${userId}/friends`,
+      `${process.env.REACT_APP_PORT}/api/user/${userId}/friends`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
