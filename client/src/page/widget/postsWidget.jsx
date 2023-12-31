@@ -10,6 +10,7 @@ const PostWidgets = ({ userId, isProfile = false }) => {
   const posts = useSelector((state) => state.posts);
   const token = useSelector((state) => state.token);
 
+  console.log(process.env.REACT_APP_PORT);
 
   const getPosts = async () => {
     const response = await fetch(`${process.env.REACT_APP_PORT}/api/post`, {
