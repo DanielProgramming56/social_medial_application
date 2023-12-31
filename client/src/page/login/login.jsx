@@ -13,7 +13,7 @@ const Login = () => {
         textAlign="center"
       >
         <Typography fontWeight="bold" fontSize="32px" color="primary">
-          Sociopedia
+          Smart
         </Typography>
       </Box>
 
@@ -25,7 +25,7 @@ const Login = () => {
         backgroundColor={theme.palette.background.alt}
       >
         <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-          Welcome to Socipedia, the Social Media for Sociopaths!
+          Welcome to Smart, the Social Media for Smart!
         </Typography>
         <Form />
       </Box>
