@@ -8,7 +8,6 @@ export const getUser = async (req, res) => {
             res.status(400).send('user not found');
             return;
         }
-        console.log(user);
         res.status(200).json(user);
     } catch (error) {
         res.status(404).json({ message: error.message });

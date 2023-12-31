@@ -7,6 +7,7 @@ import { themeSettings } from "./theme";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Home from "page/home/home";
 import Profile from "page/profile/profile";
+
   function App() {
     const mode = useSelector((state) => state.mode);
     const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])

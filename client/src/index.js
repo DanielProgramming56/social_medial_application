@@ -5,6 +5,7 @@ import App from "./App";
 import authReducer from "./state";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
+
 import {
   persistStore,
   persistReducer,
@@ -29,6 +30,8 @@ const store = configureStore({
       },
     }),
 });
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -6,6 +6,7 @@ import { setFriends } from "state";
 import FlexBetween from "./flexBetween";
 import UserImage from "./userImage";
 
+
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
